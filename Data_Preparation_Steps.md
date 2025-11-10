@@ -80,7 +80,6 @@ Clean, standardized dataset ready for DAX modeling and Power BI visualization.
 All KPIs and derived metrics were created in the Model view → New Measure section.
  🧠 Campaign Performance Metrics
 
-DAX
 (a) Total Impressions
 Total Impressions = SUM('Campaigns'[Impressions])
 
@@ -97,7 +96,7 @@ Total Conversions = SUM('Campaigns'[Conversions])
 Conversion Rate = DIVIDE([Total Conversions], [Total Clicks], 0)
 
 💰 Financial KPIs
-DAX
+
 (a) Total CAC (Customer Acquisition Cost)
 Total CAC = SUM('Campaigns'[CAC])
 
@@ -112,7 +111,7 @@ Average ROI = AVERAGE('Campaigns'[ROI])
 
 
 🔥 Engagement & Scoring
-DAX
+
 (a) Average Engagement Score
 Avg Engagement = AVERAGE('Campaigns'[Engagement_Score])
 
@@ -122,7 +121,7 @@ IF('Campaigns'[Engagement_Score] > 70, "High",
    IF('Campaigns'[Engagement_Score] > 40, "Medium", "Low"))
    
 📅 Time Intelligence (if you have a Date column)
-DAX
+
 (a) Campaigns per Month
 Campaign Count = COUNT('Campaigns'[Campaign_ID])
 
