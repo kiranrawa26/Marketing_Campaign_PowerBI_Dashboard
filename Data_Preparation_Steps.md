@@ -54,21 +54,21 @@ Below are the detailed steps followed for data cleaning and transformation befor
 - Used 1st and 99th percentiles as lower and upper bounds.  
 - Prevented distortion of average and trend metrics.
 
-8️⃣ Text Standardization**
+8️⃣ Text Standardization
 - Corrected inconsistent text values across campaign channels:  
   - `"fb"` → `"Facebook"`  
   - `"yt"` → `"YouTube"`  
   - `"email_mkt"` → `"Email Marketing"`  
 - Ensured uniform casing and spelling for better filtering and grouping
 
-9️⃣ Extracted Date Parts**
+9️⃣ Extracted Date Parts
 - Derived new time-based columns for trend analysis:
   - `Month`
   - `Quarter`
   - `Year`
 - Enabled time-series visualizations (monthly and quarterly ROI trends).
   
-🔟 Validated Totals**
+🔟 Validated Totals
 - Compared aggregated totals (Impressions, Clicks, CAC) vs. original dataset.  
 - Verified data accuracy after all transformations using summary tables.
 - 
@@ -120,7 +120,7 @@ Engagement Category =
 IF('Campaigns'[Engagement_Score] > 70, "High",
    IF('Campaigns'[Engagement_Score] > 40, "Medium", "Low"))
    
-📅 Time Intelligence (if you have a Date column)
+📅 Time Intelligence 
 
 (a) Campaigns per Month
 Campaign Count = COUNT('Campaigns'[Campaign_ID])
