@@ -78,6 +78,10 @@ The Power BI dashboard includes:
 
 ---
 
+## dashboard preview
+<img width="1417" height="736" alt="Screenshot 2025-11-11 200756" src="https://github.com/user-attachments/assets/41e53101-a8ff-4da2-9f26-f61be9236a94" />
+
+
 ## 🧾 Tools & Skills Used
 - **SQL (MySQL)** → Data cleaning, aggregation, trend analysis, segmentation  
 - **Power BI** → Dashboard design, DAX calculations, KPI visualization  
