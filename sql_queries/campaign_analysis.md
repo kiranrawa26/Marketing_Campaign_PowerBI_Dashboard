@@ -65,3 +65,72 @@ FROM marketing_campaigns
 GROUP BY Channel_Used, Month
 ORDER BY Channel_Used, Month;
 ```
+## 📊 Advanced Campaign Analysis (SQL)
+
+These queries go beyond A/B testing — they focus on identifying performance trends, audience efficiency, and optimization opportunities.
+
+---
+
+### 💰 Q6: Identify campaigns with high cost but low ROI
+```sql
+SELECT 
+    Campaign_ID, 
+    Campaign_Type,
+    Channel_Used,
+    ROI, 
+    Acquisition_Cost
+FROM marketing_campaigns
+WHERE ROI < 0.1 
+  AND Acquisition_Cost > (SELECT AVG(Acquisition_Cost) FROM marketing_campaigns)
+ORDER BY Acquisition_Cost DESC;
+```
+
+---
+
+### 📈 Q7: Monthly ROI trend to check performance over time
+```sql
+SELECT 
+    DATE_FORMAT(Date, '%Y-%m') AS Month,
+    ROUND(AVG(ROI), 2) AS Avg_Monthly_ROI
+FROM marketing_campaigns
+GROUP BY Month
+ORDER BY Month;
+```
+
+---
+
+### ⭐ Q8: Which month had the highest engagement rate overall
+```sql
+SELECT 
+    DATE_FORMAT(Date, '%b') AS Month,
+    ROUND(AVG(Engagement_Score), 2) AS Avg_Engagement
+FROM marketing_campaigns
+GROUP BY Month
+ORDER BY Avg_Engagement DESC;
+```
+
+---
+
+### 🎯 Q9: Which audience segment has the highest average ROI
+```sql
+SELECT 
+    Target_Audience,
+    ROUND(AVG(ROI), 2) AS Avg_ROI,
+    ROUND(AVG(Conversion_Rate), 2) AS Avg_Conversion
+FROM marketing_campaigns
+GROUP BY Target_Audience
+ORDER BY Avg_ROI DESC;
+```
+
+---
+
+### 🌍 Q10: Which language performed best in terms of engagement
+```sql
+SELECT 
+    Language,
+    ROUND(AVG(Engagement_Score), 2) AS Avg_Engagement,
+    ROUND(AVG(ROI), 2) AS Avg_ROI
+FROM marketing_campaigns
+GROUP BY Language
+ORDER BY Avg_Engagement DESC;
+```
